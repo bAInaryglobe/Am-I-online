@@ -8,27 +8,31 @@
   body {
     margin: 0;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 100vh;
     transition: background-color 1s;
   }
 </style>
-
-<!-- this online version of the code should be used if you don't have python installed. It should be opened by your browser -->
 <script>
   function checkOnline() {
+    const statusMessage = document.getElementById("status-message");
+    
     fetch("https://www.google.com", { mode: "no-cors" })
       .then(() => {
         document.body.style.backgroundColor = "#4CAF50"; // Green if online
+        statusMessage.textContent = "YOU ARE ONLINE!";
       })
       .catch(() => {
         document.body.style.backgroundColor = "#F44336"; // Red if offline
+        statusMessage.textContent = "YOU ARE OFFLINE!";
       });
   }
 </script>
 </head>
 <body>
+<h2 id="status-message"></h2>
 <button onclick="checkOnline()">Check</button>
 </body>
 </html>
