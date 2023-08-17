@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Online Checker</title>
+<style>
+  body {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    transition: background-color 1s;
+  }
+</style>
+<script>
+  function checkOnline() {
+    fetch("https://www.google.com", { mode: "no-cors" })
+      .then(() => {
+        document.body.style.backgroundColor = "#4CAF50"; // Green if online
+      })
+      .catch(() => {
+        document.body.style.backgroundColor = "#F44336"; // Red if offline
+      });
+  }
+</script>
+</head>
+<body>
+<button onclick="checkOnline()">Check</button>
+</body>
+</html>
