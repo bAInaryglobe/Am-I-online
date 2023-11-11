@@ -8,6 +8,8 @@ Run the "question.py" to perform basic checks to know if you are truly offline, 
 (Windows)
 
     python question.py
+
+NB: If the script does not work on windows or linux, you can simply open the index.html file in your browser
 (MacOs)
 
     python3 question.py
